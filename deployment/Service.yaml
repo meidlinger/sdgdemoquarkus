@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: titles
+  labels:
+    app: titles    
+spec:
+  ports:
+  - name: http
+    port: 9080
+  selector:
+    application: titles

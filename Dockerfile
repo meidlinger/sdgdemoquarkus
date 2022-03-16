@@ -20,7 +20,11 @@ RUN cd /tmp && \
 #        -Dextensions=quarkus-container-image-openshift,quarkus-openshift,quarkus-openshift-client \
 #        package && \
     ./mvnw package && \
-    mv ./target/quarkus-app/quarkus-run.jar /
+    mv target/quarkus-app/lib/ /deployments/lib/ && \
+    mv target/quarkus-app/*.jar /deployments/ && \
+    mv target/quarkus-app/app/ /deployments/app/ && \
+    mv target/quarkus-app/quarkus/ /deployments/quarkus/
+
 
 
 ARG service_version
@@ -32,4 +36,4 @@ EXPOSE 9080  8778 9779
 USER 1001
 
 # Run the jar file
-ENTRYPOINT ["java","-jar","/quarkus-run.jar"]
+ENTRYPOINT ["java","-jar","/deployments/quarkus-run.jar"]

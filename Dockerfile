@@ -4,6 +4,8 @@ FROM registry.access.redhat.com/ubi8/openjdk-8
 # Add Maintainer Info
 LABEL maintainer="kenny.j.yang@gmail.com"
 
+USER root
+
 COPY * /tmp
 RUN cd /tmp && \
     echo PWD=$PWD && \
@@ -24,6 +26,8 @@ ARG JAR_FILE=target/SDGDemoBoot-0.0.1.jar
 
 # Add the application's jar to the container
 ADD ${JAR_FILE} SDGDemoBoot-0.0.1.jar
+
+USER 1001
 
 # Run the jar file
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/SDGDemoBoot-0.0.1.jar"]

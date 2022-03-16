@@ -1,5 +1,6 @@
 # Start with a base image containing Java runtime
-FROM registry.access.redhat.com/quarkus/mandrel-21-rhel8
+#FROM registry.access.redhat.com/quarkus/mandrel-21-rhel8
+FROM registry.access.redhat.com/ubi8/openjdk-11
 
 # Add Maintainer Info
 LABEL maintainer="kenny.j.yang@gmail.com"

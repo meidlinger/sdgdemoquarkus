@@ -25,4 +25,4 @@ EXPOSE 9080  8778 9779
 USER 1001
 
 # Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/SDGDemoBoot-0.0.1.jar"]
+# ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/SDGDemoBoot-0.0.1.jar"]

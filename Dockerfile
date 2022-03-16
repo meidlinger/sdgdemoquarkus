@@ -4,8 +4,9 @@ FROM openjdk:8-jdk-alpine
 # Add Maintainer Info
 LABEL maintainer="kenny.j.yang@gmail.com"
 
-# Add a volume pointing to /tmp
-VOLUME /tmp
+COPY * /tmp
+RUN cd /tmp && ./mvnw package
+
 
 ARG service_version
 ENV SERVICE_VERSION ${service_version:-v1}

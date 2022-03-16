@@ -13,13 +13,14 @@ RUN cd /tmp && \
     ls -al && \
     echo mvn=`which mvn` && \
     mvn -N io.takari:maven:wrapper && \
-    mvn io.quarkus.platform:quarkus-maven-plugin:2.7.5.Final:create \
-        -DprojectGroupId=my-groupId \
-        -DprojectArtifactId=my-artifactId && \
-    ./mvnw quarkus:add-extension \
-        -Dextensions=quarkus-container-image-openshift,quarkus-openshift,quarkus-openshift-client \
-        package && \
-    mv ./target/SDGDemoBoot-0.0.1.jar /
+#    mvn io.quarkus.platform:quarkus-maven-plugin:2.7.5.Final:create \
+#        -DprojectGroupId=my-groupId \
+#        -DprojectArtifactId=my-artifactId && \
+#    ./mvnw quarkus:add-extension \
+#        -Dextensions=quarkus-container-image-openshift,quarkus-openshift,quarkus-openshift-client \
+#        package && \
+    ./mvnw package && \
+    mv ./target/quarkus-app/quarkus-run.jar /
 
 
 ARG service_version
@@ -31,4 +32,4 @@ EXPOSE 9080  8778 9779
 USER 1001
 
 # Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/SDGDemoBoot-0.0.1.jar"]
+ENTRYPOINT ["java","-jar","/quarkus-run.jar"]

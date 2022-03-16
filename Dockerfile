@@ -1,11 +1,15 @@
 # Start with a base image containing Java runtime
-FROM openjdk:8-jdk-alpine
+FROM registry.access.redhat.com/ubi8/openjdk-8
 
 # Add Maintainer Info
 LABEL maintainer="kenny.j.yang@gmail.com"
 
 COPY * /tmp
-RUN cd /tmp && ./mvnw package
+RUN cd /tmp && \
+    echo PWD=$PWD && \
+    ls -al && \
+    echo mvn=`which mvn` && \
+    ./mvnw package
 
 
 ARG service_version

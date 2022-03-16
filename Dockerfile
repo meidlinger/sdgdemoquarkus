@@ -9,6 +9,7 @@ RUN cd /tmp && \
     echo PWD=$PWD && \
     ls -al && \
     echo mvn=`which mvn` && \
+    mvn -N io.takari:maven:wrapper && \
     ./mvnw package
 
 

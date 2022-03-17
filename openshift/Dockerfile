@@ -8,8 +8,6 @@ USER root
 
 COPY * /tmp
 RUN cd /tmp && \
-    yum -y update && \
-    yum -y install net-tools ncat-nmap procps && \
     mvn -N io.takari:maven:wrapper && \
     ./mvnw package && \
     mv target/quarkus-app/lib/ /deployments/lib/ && \

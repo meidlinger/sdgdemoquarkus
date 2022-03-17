@@ -1,2 +1,2 @@
-ARTIFACT_COPY_ARGS=-p -r lib/ *-runner.jar
+ARTIFACT_COPY_ARGS=-p -r lib/ *-run.jar
 MAVEN_S2I_ARTIFACT_DIRS=target/quarkus-app

@@ -4,9 +4,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>sdg.com</groupId>
-    <artifactId>SDGDemoBoot</artifactId>
+    <artifactId>sdgdemoboot</artifactId>
 	<version>0.0.1</version>
-	<name>SDGDemoBoot</name>
+	<name>sdgdemoboot</name>
 	<description>SDG Legacy Java Convertion demo</description>
     <properties>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>

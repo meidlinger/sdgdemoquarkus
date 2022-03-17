@@ -11,10 +11,10 @@ RUN cd /tmp && \
     microdnf -y update && microdnf -y install net-tools procps nmap iputils telnet && \
     mvn -N io.takari:maven:wrapper && \
     ./mvnw package && \
-    mv target/quarkus-app/lib/ /deployments/lib/ && \
-    mv target/quarkus-app/*.jar /deployments/ && \
-    mv target/quarkus-app/app/ /deployments/app/ && \
-    mv target/quarkus-app/quarkus/ /deployments/quarkus/
+    cp -r target/quarkus-app/lib/ /deployments/lib/ && \
+    cp -r target/quarkus-app/*.jar /deployments/ && \
+    cp -r target/quarkus-app/app/ /deployments/app/ && \
+    cp -r target/quarkus-app/quarkus/ /deployments/quarkus/
 
 ARG service_version
 ENV SERVICE_VERSION ${service_version:-v1}

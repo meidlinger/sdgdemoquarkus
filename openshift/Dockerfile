@@ -21,8 +21,7 @@ RUN cd /tmp && \
 ARG service_version
 ENV SERVICE_VERSION ${service_version:-v1}
 
-# Make port 9080 available to the world outside this container
-EXPOSE 9080  8778 9779
+EXPOSE 8080  8778 9779
 
 USER 1001
 

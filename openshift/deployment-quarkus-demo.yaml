@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"quarkus-demo:latest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"quarkus-demo\")].image"}]'
   labels:
     app: quarkus-demo
     app.kubernetes.io/component: quarkus-demo

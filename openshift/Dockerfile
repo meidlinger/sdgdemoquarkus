@@ -8,7 +8,7 @@ USER root
 
 COPY * /tmp
 RUN cd /tmp && \
-    dnf -y update && dnf -y install net-tools procps ncat-nmap && \
+    microdnf -y update && microdnf -y install net-tools procps ncat-nmap && \
     mvn -N io.takari:maven:wrapper && \
     ./mvnw package && \
     mv target/quarkus-app/lib/ /deployments/lib/ && \

@@ -15,7 +15,7 @@ spec:
   source:
     git:
       ref: main 
-      uri: https://github.com/<replace with your github id>/sdgdemoquarkus.git
+      uri: https://github.com/meidlinger/sdgdemoquarkus.git
     type: Git
   strategy:
     dockerStrategy:

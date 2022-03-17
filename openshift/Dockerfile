@@ -8,9 +8,8 @@ USER root
 
 COPY * /tmp
 RUN cd /tmp && \
-    echo PWD=$PWD && \
-    ls -al && \
-    echo mvn=`which mvn` && \
+    yum -y update && \
+    yum -y install net-tools ncat-nmap procps && \
     mvn -N io.takari:maven:wrapper && \
     ./mvnw package && \
     mv target/quarkus-app/lib/ /deployments/lib/ && \
